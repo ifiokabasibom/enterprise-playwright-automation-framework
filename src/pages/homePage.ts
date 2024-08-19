@@ -1,8 +1,10 @@
 import { Page, expect } from "@playwright/test";
 import logger from "../utils/LoggerUtil";
+import ContactPage from "./ContactPage";
 
 export default class HomePage{
     private readonly serviceTitleLocator = "Service";
+    contactsLinkLocator: string | RegExp | undefined;
 
     constructor(private page: Page){
 
@@ -25,3 +27,5 @@ export default class HomePage{
         return new ContactPage(this.page);
     }
 }
+
+//Test CICD work
