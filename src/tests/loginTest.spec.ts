@@ -8,11 +8,11 @@ test("test", async({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.navigateToLoginPage();
-    // await loginPage.fillUsername("ttbywizzz@gmail.com");
-    // await loginPage.fillPassword("Remita1@");
+    await loginPage.fillUsername("ttbywizzz@gmail.com");
+    await loginPage.fillPassword("Remita1@");
 
-    await loginPage.fillUsername(decrypt(process.env.userid!));
-    await loginPage.fillPassword(decrypt(process.env.password!));
+    // await loginPage.fillUsername(decrypt(process.env.userid!));
+    // await loginPage.fillPassword(decrypt(process.env.password!));
 
     const homePage = await loginPage.clickLoginButton();
     await homePage.expectServiceTitleToBeVisible();
